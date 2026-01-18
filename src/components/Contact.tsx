@@ -22,12 +22,12 @@ const Contact = () => {
 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Retornarei em breve.",
+      title: "Thank you for your message!",
+      description: "Thanks for contacting me. I will get back to you as soon as possible.",
     });
-    
+
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
@@ -43,21 +43,15 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "contato@thales.dev",
-      href: "mailto:contato@thales.dev"
+      value: "thales.morais21@gmail.com ",
+      href: "mailto:thales.morais21@gmail.com"
     },
     {
       icon: Phone,
-      label: "Telefone",
-      value: "+55 (11) 9999-9999",
-      href: "tel:+5511999999999"
+      label: "Phone",
+      value: "+55 (55) 99662-8613",
+      href: "tel:+5555996628613"
     },
-    {
-      icon: MapPin,
-      label: "Localização",
-      value: "São Paulo, Brasil",
-      href: "#"
-    }
   ];
 
   const socialLinks = [
@@ -65,19 +59,19 @@ const Contact = () => {
       icon: Github,
       label: "GitHub",
       href: "https://github.com",
-      username: "@thales"
+      username: "@Thalesmoraisdealmeida21"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://linkedin.com",
-      username: "/in/thales"
+      username: "/in/thales-morais"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:contato@thales.dev",
-      username: "contato@thales.dev"
+      href: "mailto:thales.morais21@gmail.com",
+      username: "thales.morais21@gmail.com"
     }
   ];
 
@@ -86,11 +80,9 @@ const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-            Vamos Conversar
+            Lets Talk
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tenho sempre interesse em discutir novas oportunidades e projetos desafiadores
-          </p>
+
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -103,14 +95,14 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nome
+                    Name
                   </label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Seu nome completo"
+                    placeholder="Your full name"
                     required
                     className="transition-all duration-300 focus:shadow-glow"
                   />
@@ -125,7 +117,7 @@ const Contact = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="seu@email.com"
+                    placeholder="your@email.com"
                     required
                     className="transition-all duration-300 focus:shadow-glow"
                   />
@@ -133,37 +125,37 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Assunto
+                  Subject
                 </label>
                 <Input
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Assunto da mensagem"
+                  placeholder="Subject of the message"
                   required
                   className="transition-all duration-300 focus:shadow-glow"
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Mensagem
+                  Message
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Conte-me sobre seu projeto ou oportunidade..."
+                  placeholder="Tell me about your project or opportunity..."
                   rows={6}
                   required
                   className="transition-all duration-300 focus:shadow-glow resize-none"
                 />
               </div>
-              <Button 
-                type="submit" 
-                variant="gradient" 
-                size="lg" 
+              <Button
+                type="submit"
+                variant="gradient"
+                size="lg"
                 disabled={isSubmitting}
                 className="w-full"
               >
@@ -172,7 +164,7 @@ const Contact = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
-                    Enviar Mensagem
+                    Send Message
                   </>
                 )}
               </Button>
@@ -242,7 +234,7 @@ const Contact = () => {
                 Disponibilidade
               </h4>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Estou sempre aberto a discutir novas oportunidades e projetos interessantes. 
+                Estou sempre aberto a discutir novas oportunidades e projetos interessantes.
                 Normalmente respondo em até 24 horas.
               </p>
               <div className="flex items-center gap-2">

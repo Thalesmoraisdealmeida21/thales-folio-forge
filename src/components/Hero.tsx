@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 gradient-hero" />
       <div className="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float" />
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-accent/10 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }} />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <div className="animate-fadeIn">
@@ -19,43 +19,43 @@ const Hero = () => {
               Thales
             </h1>
             <h2 className="text-2xl md:text-4xl font-light mb-8 text-foreground/90">
-              Software Engineer & Fullstack Developer
+              Software Engineer
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-              Transformando ideias em soluções robustas há mais de 9 anos. 
-              Especialista em APIs modernas, integração de sistemas e automação de processos.
+              Transforming ideas into robust solutions for over 9 years.
+              Specialist in modern APIs, system integration and process automation.
             </p>
           </div>
 
           <div className="animate-slideUp flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button variant="hero" size="lg" className="group">
+            {/* <Button variant="hero" size="lg" className="group">
               Ver Projetos
               <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-            </Button>
+            </Button> */}
             <Button variant="outline" size="lg">
-              Entrar em Contato
+              Contact Me
             </Button>
           </div>
 
           <div className="animate-slideUp flex justify-center space-x-6">
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com/Thalesmoraisdealmeida21"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
             >
               <Github size={24} />
             </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/thales-morais/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
             >
               <Linkedin size={24} />
             </a>
-            <a 
-              href="mailto:contato@thales.dev" 
+            <a
+              href="mailto:thales.morais21@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
             >
               <Mail size={24} />
