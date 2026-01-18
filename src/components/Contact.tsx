@@ -20,16 +20,41 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Format message with sender information
+      const emailText = `From: ${formData.name} <${formData.email}>\n\n${formData.message}`;
 
-    toast({
-      title: "Thank you for your message!",
-      description: "Thanks for contacting me. I will get back to you as soon as possible.",
-    });
+      const response = await fetch('https://mailer.thalesmorais.dev/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'thalesmorais21@gmail.com',
+          subject: formData.subject,
+          text: emailText
+        })
+      });
 
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      toast({
+        title: "Thank you for your message!",
+        description: "Thanks for contacting me. I will get back to you as soon as possible.",
+      });
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
