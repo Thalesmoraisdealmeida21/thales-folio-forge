@@ -13,68 +13,38 @@ const Footer = () => {
               Thales
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              Software Engineer apaixonado por criar soluções robustas e escaláveis. 
-              Sempre em busca de novos desafios e oportunidades de crescimento.
+              Passionate Software Engineer creating robust and scalable solutions.
+              Always looking for new challenges and opportunities for growth.
             </p>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">
-              Navegação
-            </h4>
-            <ul className="space-y-2">
-              {[
-                { label: 'Home', href: '#home' },
-                { label: 'Sobre', href: '#about' },
-                { label: 'Skills', href: '#skills' },
-                { label: 'Projetos', href: '#projects' },
-                { label: 'Contato', href: '#contact' },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Social */}
           <div>
             <h4 className="text-foreground font-semibold mb-4">
               Conecte-se
             </h4>
             <div className="space-y-3 mb-6">
               <div className="text-muted-foreground text-sm">
-                contato@thales.dev
-              </div>
-              <div className="text-muted-foreground text-sm">
-                São Paulo, Brasil
+                thales.morais21@gmail.com
               </div>
             </div>
             <div className="flex gap-4">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
+              <a
+                href="https://github.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
               >
                 <Github size={20} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/thales-morais/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
               >
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="mailto:contato@thales.dev"
+              <a
+                href="mailto:thales.morais21@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
               >
                 <Mail size={20} />
@@ -87,12 +57,12 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} Thales. Todos os direitos reservados.
+              © {currentYear} Thales. All rights reserved.
             </div>
             <div className="flex items-center gap-1 text-muted-foreground text-sm">
-              Feito com 
+              Made with
               <Heart className="w-4 h-4 text-red-500 mx-1" />
-              e tecnologia
+              and technology
             </div>
           </div>
         </div>

@@ -16,19 +16,18 @@ const Header = () => {
 
   const navItems = [
     { label: 'Home', href: '#home' },
-    { label: 'Sobre', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projetos', href: '#projects' },
-    { label: 'Contato', href: '#contact' },
+    { label: 'About me', href: '#about' },
+    // { label: 'Skills', href: '#skills' },
+    // { label: 'Projetos', href: '#projects' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-background/80 backdrop-blur-lg border-b border-border shadow-soft' 
-          : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-background/80 backdrop-blur-lg border-b border-border shadow-soft'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -48,9 +47,9 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <Button variant="gradient" size="sm">
+            {/* <Button variant="gradient" size="sm">
               Baixar CV
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}

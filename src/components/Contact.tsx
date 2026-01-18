@@ -11,7 +11,8 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -22,7 +23,7 @@ const Contact = () => {
 
     try {
       // Format message with sender information
-      const emailText = `From: ${formData.name} <${formData.email}>\n\n${formData.message}`;
+      const emailText = `From: ${formData.name} <${formData.email}>\n ${formData.phone} \n${formData.message}`;
 
       const response = await fetch('https://mailer.thalesmorais.dev/send-email', {
         method: 'POST',
@@ -45,7 +46,7 @@ const Contact = () => {
         description: "Thanks for contacting me. I will get back to you as soon as possible.",
       });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '', phone: '' });
     } catch (error) {
       toast({
         title: "Error sending message",
@@ -114,7 +115,7 @@ const Contact = () => {
           {/* Contact Form */}
           <Card className="p-8 shadow-soft border-border/50 animate-slideUp">
             <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Envie uma Mensagem
+              Send me your message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
@@ -148,19 +149,35 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Subject
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject of the message"
-                  required
-                  className="transition-all duration-300 focus:shadow-glow"
-                />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject of the message"
+                    required
+                    className="transition-all duration-300 focus:shadow-glow"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    Phone
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Your telephone number"
+                    className="transition-all duration-300 focus:shadow-glow"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
@@ -200,7 +217,7 @@ const Contact = () => {
           <div className="space-y-8 animate-slideUp" style={{ animationDelay: '200ms' }}>
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                Informações de Contato
+                Contact Information
               </h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
@@ -227,7 +244,7 @@ const Contact = () => {
 
             <div>
               <h4 className="text-lg font-semibold mb-4 text-foreground">
-                Redes Sociais
+                Social
               </h4>
               <div className="space-y-3">
                 {socialLinks.map((social, index) => (
@@ -254,21 +271,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <Card className="p-6 shadow-soft border-border/50">
-              <h4 className="text-lg font-semibold mb-3 text-foreground">
-                Disponibilidade
-              </h4>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Estou sempre aberto a discutir novas oportunidades e projetos interessantes.
-                Normalmente respondo em até 24 horas.
-              </p>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm text-foreground">
-                  Disponível para novos projetos
-                </span>
-              </div>
-            </Card>
+
           </div>
         </div>
       </div>
